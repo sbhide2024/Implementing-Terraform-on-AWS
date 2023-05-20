@@ -1,9 +1,22 @@
 ##################################################################################
 # PROVIDERS #
 ##################################################################################
-
+terraform {
+  required_version = "~> 0.14" # which means any version equal & above 0.14 like 0.15, 0.16 etc and < 1.xx
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
 
 provider "aws" {
+  region  = us-east-1
+ # profile = "default"
+}
+
+#provider "aws" {
 #  access_key = "ACCESS_KEY"
 #  secret_key = "SECRET_KEY"
  # AWS_ACCESS_KEY_ID="${var.AWS_ACCESS_KEY_ID}"
@@ -12,8 +25,8 @@ provider "aws" {
 #  secret_key = var.AWS_SECRET_ACCESS_KEY
 #  access_key      = "${var.access_key}"
  # secret_key      = "${var.secret_key}"
-  region     = "us-east-1a"
-}
+ # region     = "us-east-1a"
+# }
 
 ##################################################################################
 # DATA
