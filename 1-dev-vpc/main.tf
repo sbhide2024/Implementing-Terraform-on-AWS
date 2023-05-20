@@ -5,6 +5,9 @@
 provider "aws" {
 #  access_key = "ACCESS_KEY"
 #  secret_key = "SECRET_KEY"
+  AWS_ACCESS_KEY_ID=var.AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY=var.AWS_SECRET_ACCESS_KEY
+  
   region     = "us-east-1"
 }
 
