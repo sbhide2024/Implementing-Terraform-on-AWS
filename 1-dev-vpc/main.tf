@@ -11,6 +11,11 @@ terraform {
   }
 }
 
+variable "region" {
+  type        = string
+  description = "(Optional) The region where the resources are created. Defaults to us-east-1."
+  default     = "us-east-1"
+}
 
 provider "aws" {
   region  = us-east-1
