@@ -1,19 +1,24 @@
-
+# Terraform Settings Block
 terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.0"
+      #version = "~> 3.21" # Optional but recommended in production
     }
   }
 }
 
-# Configure the AWS Provider
+# Provider Block
 provider "aws" {
-  region = "us-east-1"
+ # profile = "default" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
+  region  = "us-east-1"
 }
 
-# Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
+# Resource Block
+resource "aws_instance" "ec2demo" {
+  ami           = "ami-0533f2ba8a1995cf9" # Amazon Linux in us-east-1, update as per your region
+  instance_type = "t2.micro"
 }
+
+
+
